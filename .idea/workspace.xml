@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66622c49-7dd1-444a-8a38-7e50eeb27460" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/bert_pytorch/models/bert.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bert_pytorch/modules/aggregator/bert_attention.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bert_pytorch/modules/aggregator/bert_pooler.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bert_pytorch/modules/encoder/bert_embedding.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bert_pytorch/modules/encoder/bert_encoder.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bert_pytorch/modules/utils/file_utils.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bert_pytorch/modules/utils/tokenization.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bert_pytorch/test/using_bert.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/bert_pytorch/modules/decoder/bert_decoder.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/bert_pytorch/models/bert.py" afterPath="$PROJECT_DIR$/bert_pytorch/models/bert.py" />
+      <change beforePath="$PROJECT_DIR$/bert_pytorch/modules/aggregator/bert_attention.py" afterPath="$PROJECT_DIR$/bert_pytorch/modules/aggregator/bert_attention.py" />
+      <change beforePath="$PROJECT_DIR$/bert_pytorch/modules/encoder/bert_embedding.py" afterPath="$PROJECT_DIR$/bert_pytorch/modules/encoder/bert_embedding.py" />
+      <change beforePath="$PROJECT_DIR$/bert_pytorch/modules/encoder/bert_encoder.py" afterPath="$PROJECT_DIR$/bert_pytorch/modules/encoder/bert_encoder.py" />
+      <change beforePath="$PROJECT_DIR$/bert_pytorch/test/using_bert.py" afterPath="$PROJECT_DIR$/bert_pytorch/test/using_bert.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,17 +19,17 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/BERT_Pytorch_fastNLP$extract_features.coverage" NAME="extract_features Coverage Results" MODIFIED="1547134259194" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/reference/pytorch-pretrained-BERT-master/examples" />
-    <SUITE FILE_PATH="coverage/BERT_Pytorch_fastNLP$using_bert.coverage" NAME="using_bert Coverage Results" MODIFIED="1547186782297" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bert_pytorch/test" />
+    <SUITE FILE_PATH="coverage/BERT_Pytorch_fastNLP$using_bert.coverage" NAME="using_bert Coverage Results" MODIFIED="1547191278652" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bert_pytorch/test" />
   </component>
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="bert.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bert_pytorch/models/bert.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7444">
-              <caret line="23" column="36" lean-forward="true" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+            <state relative-caret-position="439">
+              <caret line="321" column="26" lean-forward="true" selection-start-line="321" selection-start-column="26" selection-end-line="321" selection-end-column="26" />
               <folding>
-                <element signature="e#190#202#0" expanded="true" />
+                <element signature="e#191#200#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -40,8 +38,8 @@
       <file leaf-file-name="using_bert.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bert_pytorch/test/using_bert.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1008">
-              <caret line="42" column="32" lean-forward="true" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
+            <state relative-caret-position="168">
+              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding>
                 <element signature="e#197#209#0" expanded="true" />
               </folding>
@@ -49,22 +47,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="extract_features.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/reference/pytorch-pretrained-BERT-master/examples/extract_features.py">
+      <file leaf-file-name="modeling.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reference/pytorch-pretrained-BERT-master/pytorch_pretrained_bert/modeling.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="24" column="9" lean-forward="false" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+            <state relative-caret-position="43">
+              <caret line="32" column="37" lean-forward="false" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bert_pooler.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bert_pytorch/modules/aggregator/bert_pooler.py">
+      <file leaf-file-name="bert_decoder.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bert_pytorch/modules/decoder/bert_decoder.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="2376">
+              <caret line="99" column="0" lean-forward="true" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
+              <folding>
+                <element signature="e#198#209#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -72,8 +72,8 @@
       <file leaf-file-name="bert_encoder.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bert_pytorch/modules/encoder/bert_encoder.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24">
-              <caret line="1" column="23" lean-forward="false" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+            <state relative-caret-position="648">
+              <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding>
                 <element signature="e#198#209#0" expanded="true" />
               </folding>
@@ -84,32 +84,8 @@
       <file leaf-file-name="bert_attention.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bert_pytorch/modules/aggregator/bert_attention.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24">
-              <caret line="91" column="12" lean-forward="false" selection-start-line="91" selection-start-column="12" selection-end-line="91" selection-end-column="12" />
-              <folding>
-                <element signature="e#200#211#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tokenization.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/reference/pytorch-pretrained-BERT-master/pytorch_pretrained_bert/tokenization.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding>
-                <element signature="e#673#711#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tokenization.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bert_pytorch/modules/utils/tokenization.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="-873">
+              <caret line="8" column="11" lean-forward="true" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -118,8 +94,8 @@
       <file leaf-file-name="bert_embedding.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bert_pytorch/modules/encoder/bert_embedding.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="19" column="49" lean-forward="false" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
+            <state relative-caret-position="288">
+              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding>
                 <element signature="e#200#212#0" expanded="true" />
               </folding>
@@ -141,6 +117,11 @@
       <find>Bert</find>
       <find>BertModel</find>
       <find>PRETRAINED_MODEL_ARCHIVE_MAP</find>
+      <find>BertForMaskedLM</find>
+      <find>a</find>
+      <find>CrossEntropy</find>
+      <find>BertLayerNorm</find>
+      <find>CrossEntropyLoss</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -149,13 +130,14 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/bert_pytorch/modules/encoder/bert_embedding.py" />
-        <option value="$PROJECT_DIR$/bert_pytorch/modules/aggregator/bert_attention.py" />
-        <option value="$PROJECT_DIR$/bert_pytorch/modules/encoder/bert_encoder.py" />
         <option value="$PROJECT_DIR$/bert_pytorch/modules/aggregator/bert_pooler.py" />
         <option value="$PROJECT_DIR$/bert_pytorch/models/file_utils.py" />
         <option value="$PROJECT_DIR$/reference/pytorch-pretrained-BERT-master/examples/extract_features.py" />
         <option value="$PROJECT_DIR$/bert_pytorch/models/bert.py" />
+        <option value="$PROJECT_DIR$/bert_pytorch/modules/encoder/bert_encoder.py" />
+        <option value="$PROJECT_DIR$/bert_pytorch/modules/aggregator/bert_attention.py" />
+        <option value="$PROJECT_DIR$/bert_pytorch/modules/decoder/bert_decoder.py" />
+        <option value="$PROJECT_DIR$/bert_pytorch/modules/encoder/bert_embedding.py" />
         <option value="$PROJECT_DIR$/bert_pytorch/test/using_bert.py" />
       </list>
     </option>
@@ -223,6 +205,13 @@
               <item name="BERT_Pytorch_fastNLP" type="462c0819:PsiDirectoryNode" />
               <item name="bert_pytorch" type="462c0819:PsiDirectoryNode" />
               <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="decoder" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BERT_Pytorch_fastNLP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BERT_Pytorch_fastNLP" type="462c0819:PsiDirectoryNode" />
+              <item name="bert_pytorch" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
               <item name="encoder" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -247,62 +236,6 @@
               <item name="BERT_Pytorch_fastNLP" type="b2602c69:ProjectViewProjectNode" />
               <item name="BERT_Pytorch_fastNLP" type="462c0819:PsiDirectoryNode" />
               <item name="reference" type="462c0819:PsiDirectoryNode" />
-              <item name="BERT-pytorch-master" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BERT_Pytorch_fastNLP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BERT_Pytorch_fastNLP" type="462c0819:PsiDirectoryNode" />
-              <item name="reference" type="462c0819:PsiDirectoryNode" />
-              <item name="BERT-pytorch-master" type="462c0819:PsiDirectoryNode" />
-              <item name="bert_pytorch" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BERT_Pytorch_fastNLP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BERT_Pytorch_fastNLP" type="462c0819:PsiDirectoryNode" />
-              <item name="reference" type="462c0819:PsiDirectoryNode" />
-              <item name="BERT-pytorch-master" type="462c0819:PsiDirectoryNode" />
-              <item name="bert_pytorch" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BERT_Pytorch_fastNLP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BERT_Pytorch_fastNLP" type="462c0819:PsiDirectoryNode" />
-              <item name="reference" type="462c0819:PsiDirectoryNode" />
-              <item name="BERT-pytorch-master" type="462c0819:PsiDirectoryNode" />
-              <item name="bert_pytorch" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="attention" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BERT_Pytorch_fastNLP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BERT_Pytorch_fastNLP" type="462c0819:PsiDirectoryNode" />
-              <item name="reference" type="462c0819:PsiDirectoryNode" />
-              <item name="BERT-pytorch-master" type="462c0819:PsiDirectoryNode" />
-              <item name="bert_pytorch" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="embedding" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BERT_Pytorch_fastNLP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BERT_Pytorch_fastNLP" type="462c0819:PsiDirectoryNode" />
-              <item name="reference" type="462c0819:PsiDirectoryNode" />
-              <item name="BERT-pytorch-master" type="462c0819:PsiDirectoryNode" />
-              <item name="bert_pytorch" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BERT_Pytorch_fastNLP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BERT_Pytorch_fastNLP" type="462c0819:PsiDirectoryNode" />
-              <item name="reference" type="462c0819:PsiDirectoryNode" />
-              <item name="BERT-pytorch-master" type="462c0819:PsiDirectoryNode" />
-              <item name="bert_pytorch" type="462c0819:PsiDirectoryNode" />
-              <item name="trainer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BERT_Pytorch_fastNLP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BERT_Pytorch_fastNLP" type="462c0819:PsiDirectoryNode" />
-              <item name="reference" type="462c0819:PsiDirectoryNode" />
               <item name="fastNLP-master" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -318,7 +251,7 @@
               <item name="reference" type="462c0819:PsiDirectoryNode" />
               <item name="fastNLP-master" type="462c0819:PsiDirectoryNode" />
               <item name="fastNLP" type="462c0819:PsiDirectoryNode" />
-              <item name="io" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BERT_Pytorch_fastNLP" type="b2602c69:ProjectViewProjectNode" />
@@ -332,40 +265,7 @@
               <item name="BERT_Pytorch_fastNLP" type="b2602c69:ProjectViewProjectNode" />
               <item name="BERT_Pytorch_fastNLP" type="462c0819:PsiDirectoryNode" />
               <item name="reference" type="462c0819:PsiDirectoryNode" />
-              <item name="fastNLP-master" type="462c0819:PsiDirectoryNode" />
-              <item name="fastNLP" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BERT_Pytorch_fastNLP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BERT_Pytorch_fastNLP" type="462c0819:PsiDirectoryNode" />
-              <item name="reference" type="462c0819:PsiDirectoryNode" />
-              <item name="fastNLP-master" type="462c0819:PsiDirectoryNode" />
-              <item name="fastNLP" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="aggregator" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BERT_Pytorch_fastNLP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BERT_Pytorch_fastNLP" type="462c0819:PsiDirectoryNode" />
-              <item name="reference" type="462c0819:PsiDirectoryNode" />
-              <item name="fastNLP-master" type="462c0819:PsiDirectoryNode" />
-              <item name="fastNLP" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="encoder" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BERT_Pytorch_fastNLP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BERT_Pytorch_fastNLP" type="462c0819:PsiDirectoryNode" />
-              <item name="reference" type="462c0819:PsiDirectoryNode" />
               <item name="pytorch-pretrained-BERT-master" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BERT_Pytorch_fastNLP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BERT_Pytorch_fastNLP" type="462c0819:PsiDirectoryNode" />
-              <item name="reference" type="462c0819:PsiDirectoryNode" />
-              <item name="pytorch-pretrained-BERT-master" type="462c0819:PsiDirectoryNode" />
-              <item name="examples" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BERT_Pytorch_fastNLP" type="b2602c69:ProjectViewProjectNode" />
@@ -475,13 +375,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42563483" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46795648" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39540508" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41112456" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -639,16 +540,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reference/fastNLP-master/fastNLP/models/biaffine_parser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9660">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#11#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/reference/fastNLP-master/fastNLP/models/char_language_model.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2508">
@@ -671,14 +562,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reference/fastNLP-master/fastNLP/models/base_model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="5" column="33" lean-forward="true" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
           <folding />
         </state>
       </provider>
@@ -721,14 +604,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reference/pytorch-pretrained-BERT-master/pytorch_pretrained_bert/modeling.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/reference/fastNLP-master/fastNLP/modules/encoder/transformer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -747,16 +622,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bert_pytorch/modules/encoder/bert_embedding.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="19" column="49" lean-forward="false" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
-          <folding>
-            <element signature="e#200#212#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/reference/pytorch-pretrained-BERT-master/tests/modeling_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -770,35 +635,7 @@
         <state relative-caret-position="672">
           <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding>
-            <element signature="e#182#191#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reference/pytorch-pretrained-BERT-master/examples/extract_features.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="24" column="9" lean-forward="false" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bert_pytorch/modules/encoder/bert_encoder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="1" column="23" lean-forward="false" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
-          <folding>
-            <element signature="e#198#209#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bert_pytorch/modules/aggregator/bert_attention.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="91" column="12" lean-forward="false" selection-start-line="91" selection-start-column="12" selection-end-line="91" selection-end-column="12" />
-          <folding>
-            <element signature="e#200#211#0" expanded="true" />
+            <element signature="e#182#191#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -806,9 +643,9 @@
     <entry file="file://$PROJECT_DIR$/reference/pytorch-pretrained-BERT-master/pytorch_pretrained_bert/tokenization.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
-            <element signature="e#673#711#0" expanded="true" />
+            <element signature="e#673#711#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -818,7 +655,7 @@
         <state relative-caret-position="24">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="75" />
           <folding>
-            <element signature="e#22#97#0" expanded="true" />
+            <element signature="e#22#97#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -831,20 +668,113 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///Applications/anaconda3/envs/fastNLP/lib/python3.6/site-packages/torch/nn/modules/module.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-730">
+          <caret line="991" column="8" lean-forward="false" selection-start-line="991" selection-start-column="8" selection-end-line="991" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reference/fastNLP-master/fastNLP/models/biaffine_parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3173">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reference/fastNLP-master/tutorials/fastnlp_10min_tutorial_v2.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reference/fastNLP-master/fastNLP/models/base_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" column="21" lean-forward="false" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/anaconda3/envs/fastNLP/lib/python3.6/site-packages/torch/nn/modules/loss.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="579">
+          <caret line="895" column="8" lean-forward="false" selection-start-line="895" selection-start-column="8" selection-end-line="895" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reference/pytorch-pretrained-BERT-master/examples/extract_features.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="24" column="9" lean-forward="false" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reference/pytorch-pretrained-BERT-master/pytorch_pretrained_bert/modeling.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43">
+          <caret line="32" column="37" lean-forward="false" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bert_pytorch/modules/encoder/bert_encoder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding>
+            <element signature="e#198#209#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bert_pytorch/modules/aggregator/bert_attention.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-873">
+          <caret line="8" column="11" lean-forward="true" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bert_pytorch/modules/encoder/bert_embedding.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="e#200#212#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/bert_pytorch/models/bert.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7444">
-          <caret line="23" column="36" lean-forward="true" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+        <state relative-caret-position="439">
+          <caret line="321" column="26" lean-forward="true" selection-start-line="321" selection-start-column="26" selection-end-line="321" selection-end-column="26" />
           <folding>
-            <element signature="e#190#202#0" expanded="true" />
+            <element signature="e#191#200#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bert_pytorch/modules/decoder/bert_decoder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2376">
+          <caret line="99" column="0" lean-forward="true" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
+          <folding>
+            <element signature="e#198#209#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bert_pytorch/test/using_bert.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1008">
-          <caret line="42" column="32" lean-forward="true" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
+        <state relative-caret-position="168">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding>
             <element signature="e#197#209#0" expanded="true" />
           </folding>

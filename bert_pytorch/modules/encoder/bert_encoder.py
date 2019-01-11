@@ -9,7 +9,8 @@
 import copy
 import torch
 import torch.nn as nn
-from ..aggregator.bert_attention import BertAttention, BertIntermediate, BertOutput
+from ..aggregator.bert_attention import BertAttention
+from ..decoder.bert_decoder import BertIntermediate, BertOutput
 
 
 class BertLayer(nn.Module):

@@ -6,8 +6,7 @@
 # @Contact : rshcaroline@gmail.com
 # @Desc    :
 
-import torch
-from torch import nn
+
 import os
 import copy
 import json
@@ -16,10 +15,15 @@ import tarfile
 import tempfile
 import shutil
 
+import torch
+from torch import nn
+from torch.nn import CrossEntropyLoss
+
 from ..modules.encoder.bert_embedding import BertEmbeddings, BertLayerNorm
 from ..modules.encoder.bert_encoder import BertEncoder
+from ..modules.decoder.bert_decoder import BertOnlyMLMHead
 from ..modules.aggregator.bert_pooler import BertPooler
-from bert_pytorch.modules.utils.file_utils import cached_path
+from ..modules.utils.file_utils import cached_path
 
 logger = logging.getLogger(__name__)
 
@@ -343,3 +347,63 @@ class BertModel(PreTrainedBertModel):
             encoded_layers = encoded_layers[-1]
         return encoded_layers, pooled_output
 
+
+class BertForMaskedLM(PreTrainedBertModel):
+    """BERT model with the masked language modeling head.
+    This module comprises the BERT model followed by the masked language modeling head.
+
+    Params:
+        config: a BertConfig class instance with the configuration to build a new model.
+
+    Inputs:
+        `input_ids`: a torch.LongTensor of shape [batch_size, sequence_length]
+            with the word token indices in the vocabulary(see the tokens preprocessing logic in the scripts
+            `extract_features.py`, `run_classifier.py` and `run_squad.py`)
+        `token_type_ids`: an optional torch.LongTensor of shape [batch_size, sequence_length] with the token
+            types indices selected in [0, 1]. Type 0 corresponds to a `sentence A` and type 1 corresponds to
+            a `sentence B` token (see BERT paper for more details).
+        `attention_mask`: an optional torch.LongTensor of shape [batch_size, sequence_length] with indices
+            selected in [0, 1]. It's a mask to be used if the input sequence length is smaller than the max
+            input sequence length in the current batch. It's the mask that we typically use for attention when
+            a batch has varying length sentences.
+        `masked_lm_labels`: masked language modeling labels: torch.LongTensor of shape [batch_size, sequence_length]
+            with indices selected in [-1, 0, ..., vocab_size]. All labels set to -1 are ignored (masked), the loss
+            is only computed for the labels set in [0, ..., vocab_size]
+
+    Outputs:
+        if `masked_lm_labels` is  not `None`:
+            Outputs the masked language modeling loss.
+        if `masked_lm_labels` is `None`:
+            Outputs the masked language modeling logits of shape [batch_size, sequence_length, vocab_size].
+
+    Example usage:
+    ```python
+    # Already been converted into WordPiece token ids
+    input_ids = torch.LongTensor([[31, 51, 99], [15, 5, 0]])
+    input_mask = torch.LongTensor([[1, 1, 1], [1, 1, 0]])
+    token_type_ids = torch.LongTensor([[0, 0, 1], [0, 1, 0]])
+
+    config = BertConfig(vocab_size_or_config_json_file=32000, hidden_size=768,
+        num_hidden_layers=12, num_attention_heads=12, intermediate_size=3072)
+
+    model = BertForMaskedLM(config)
+    masked_lm_logits_scores = model(input_ids, token_type_ids, input_mask)
+    ```
+    """
+    def __init__(self, config):
+        super(BertForMaskedLM, self).__init__(config)
+        self.bert = BertModel(config)
+        self.cls = BertOnlyMLMHead(config, self.bert.embeddings.word_embeddings.weight)
+        self.apply(self.init_bert_weights)
+
+    def forward(self, input_ids, token_type_ids=None, attention_mask=None, masked_lm_labels=None):
+        sequence_output, _ = self.bert(input_ids, token_type_ids, attention_mask,
+                                       output_all_encoded_layers=False)
+        prediction_scores = self.cls(sequence_output)
+
+        if masked_lm_labels is not None:
+            loss_fct = CrossEntropyLoss(ignore_index=-1)
+            masked_lm_loss = loss_fct(prediction_scores.view(-1, self.config.vocab_size), masked_lm_labels.view(-1))
+            return masked_lm_loss
+        else:
+            return prediction_scores

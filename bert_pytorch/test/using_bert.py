@@ -8,9 +8,8 @@
 
 
 import torch
-# from pytorch_pretrained_bert import BertTokenizer, BertModel, BertForMaskedLM
 from bert_pytorch.modules.utils.tokenization import BertTokenizer
-from bert_pytorch.models.bert import BertModel
+from bert_pytorch.models.bert import BertModel, BertForMaskedLM
 
 # Load pre-trained model tokenizer (vocabulary)
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
@@ -33,11 +32,23 @@ segments_ids = [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1]
 tokens_tensor = torch.tensor([indexed_tokens])
 segments_tensors = torch.tensor([segments_ids])
 
+# # Load pre-trained model (weights)
+# model = BertModel.from_pretrained('bert-base-uncased')
+# model.eval()
+#
+# # Predict hidden states features for each layer
+# encoded_layers, _ = model(tokens_tensor, segments_tensors)
+# # We have a hidden states for each of the 12 layers in model bert-base-uncased
+# assert len(encoded_layers) == 12
+
 # Load pre-trained model (weights)
-model = BertModel.from_pretrained('bert-base-uncased')
+model = BertForMaskedLM.from_pretrained('bert-base-uncased')
 model.eval()
 
-# Predict hidden states features for each layer
-encoded_layers, _ = model(tokens_tensor, segments_tensors)
-# We have a hidden states for each of the 12 layers in model bert-base-uncased
-assert len(encoded_layers) == 12
+# Predict all tokens
+predictions = model(tokens_tensor, segments_tensors)
+
+# confirm we were able to predict 'henson'
+predicted_index = torch.argmax(predictions[0, masked_index]).item()
+predicted_token = tokenizer.convert_ids_to_tokens([predicted_index])[0]
+assert predicted_token == 'henson'

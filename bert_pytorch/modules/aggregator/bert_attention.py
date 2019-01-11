@@ -9,7 +9,26 @@
 import math
 import torch
 import torch.nn as nn
-from ..encoder.bert_embedding import BertLayerNorm
+
+
+try:
+    from apex.normalization.fused_layer_norm import FusedLayerNorm as BertLayerNorm
+except ImportError:
+    print("Better speed can be achieved with apex installed from https://www.github.com/nvidia/apex.")
+    class BertLayerNorm(nn.Module):
+        def __init__(self, hidden_size, eps=1e-12):
+            """Construct a layernorm module in the TF style (epsilon inside the square root).
+            """
+            super(BertLayerNorm, self).__init__()
+            self.weight = nn.Parameter(torch.ones(hidden_size))
+            self.bias = nn.Parameter(torch.zeros(hidden_size))
+            self.variance_epsilon = eps
+
+        def forward(self, x):
+            u = x.mean(-1, keepdim=True)
+            s = (x - u).pow(2).mean(-1, keepdim=True)
+            x = (x - u) / torch.sqrt(s + self.variance_epsilon)
+            return self.weight * x + self.bias
 
 
 class BertSelfAttention(nn.Module):
@@ -87,46 +106,3 @@ class BertAttention(nn.Module):
         self_output = self.self(input_tensor, attention_mask)
         attention_output = self.output(self_output, input_tensor)
         return attention_output
-
-
-def gelu(x):
-    """Implementation of the gelu activation function.
-        For information: OpenAI GPT's gelu is slightly different (and gives slightly different results):
-        0.5 * x * (1 + torch.tanh(math.sqrt(2 / math.pi) * (x + 0.044715 * torch.pow(x, 3))))
-    """
-    return x * 0.5 * (1.0 + torch.erf(x / math.sqrt(2.0)))
-
-
-def swish(x):
-    return x * torch.sigmoid(x)
-
-
-ACT2FN = {"gelu": gelu, "relu": torch.nn.functional.relu, "swish": swish}
-
-class BertIntermediate(nn.Module):
-    def __init__(self, config):
-        super(BertIntermediate, self).__init__()
-        self.dense = nn.Linear(config.hidden_size, config.intermediate_size)
-        self.intermediate_act_fn = ACT2FN[config.hidden_act] \
-            if isinstance(config.hidden_act, str) else config.hidden_act
-
-    def forward(self, hidden_states):
-        hidden_states = self.dense(hidden_states)
-        hidden_states = self.intermediate_act_fn(hidden_states)
-        return hidden_states
-
-
-class BertOutput(nn.Module):
-    def __init__(self, config):
-        super(BertOutput, self).__init__()
-        self.dense = nn.Linear(config.intermediate_size, config.hidden_size)
-        self.LayerNorm = BertLayerNorm(config.hidden_size, eps=1e-12)
-        self.dropout = nn.Dropout(config.hidden_dropout_prob)
-
-    def forward(self, hidden_states, input_tensor):
-        hidden_states = self.dense(hidden_states)
-        hidden_states = self.dropout(hidden_states)
-        hidden_states = self.LayerNorm(hidden_states + input_tensor)
-        return hidden_states
-
-
