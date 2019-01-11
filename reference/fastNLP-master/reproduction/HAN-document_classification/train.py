@@ -20,7 +20,7 @@ class SentIter:
 
 
 def train_word_vec():
-    # load data
+    # load squad_data
     dirname = 'reviews'
     sents = SentIter(dirname, 238)
     # define models and train
@@ -158,7 +158,7 @@ if __name__ == '__main__':
     del embed_model
     start_file = 0
     dataset = YelpDocSet('reviews', start_file, 120 - start_file, embedding)
-    print('training data size {}'.format(len(dataset)))
+    print('training squad_data size {}'.format(len(dataset)))
     net = HAN(input_size=200, output_size=5,
               word_hidden_size=50, word_num_layers=1, word_context_size=100,
               sent_hidden_size=50, sent_num_layers=1, sent_context_size=100)

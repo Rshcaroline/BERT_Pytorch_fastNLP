@@ -95,7 +95,7 @@ if __name__ == "__main__":
     data = DataTuple(test_input=test_set,
                      test_label=test_label, train_label=train_label, train_input=train_set)
 
-    print("Loaded data sets. Start building network.")
+    print("Loaded squad_data sets. Start building network.")
 
     USE_GPU = True
     cnn_batch_size = 700

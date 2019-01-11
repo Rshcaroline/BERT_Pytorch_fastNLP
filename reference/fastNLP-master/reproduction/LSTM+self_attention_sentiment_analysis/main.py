@@ -21,7 +21,7 @@ attention_unit = 350
 attention_hops = 10
 class_num = 5
 nfc = 3000
-### data load  ###
+### squad_data load  ###
 train_dataset = Dataset_loader(train_data_path)
 train_data = train_dataset.load()
 

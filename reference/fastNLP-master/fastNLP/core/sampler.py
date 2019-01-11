@@ -29,7 +29,7 @@ class BaseSampler(object):
 
 
 class SequentialSampler(BaseSampler):
-    """Sample data in the original order.
+    """Sample squad_data in the original order.
 
     """
     def __call__(self, data_set):
@@ -42,7 +42,7 @@ class SequentialSampler(BaseSampler):
 
 
 class RandomSampler(BaseSampler):
-    """Sample data in random permutation order.
+    """Sample squad_data in random permutation order.
 
     """
     def __call__(self, data_set):
@@ -106,7 +106,7 @@ def simple_sort_bucketing(lengths):
     """
 
     :param lengths: list of int, the lengths of all examples.
-    :return data: 2-level list
+    :return squad_data: 2-level list
             ::
 
                 [
@@ -123,7 +123,7 @@ def simple_sort_bucketing(lengths):
 
 
 def k_means_1d(x, k, max_iter=100):
-    """Perform k-means on 1-D data.
+    """Perform k-means on 1-D squad_data.
 
     :param x: list of int, representing points in 1-D.
     :param k: the number of clusters required.
@@ -158,7 +158,7 @@ def k_means_bucketing(lengths, buckets):
     :param lengths: list of int, the length of all samples.
     :param buckets: list of int. The length of the list is the number of buckets. Each integer is the maximum length
         threshold for each bucket (This is usually None.).
-    :return data: 2-level list
+    :return squad_data: 2-level list
             ::
 
                 [

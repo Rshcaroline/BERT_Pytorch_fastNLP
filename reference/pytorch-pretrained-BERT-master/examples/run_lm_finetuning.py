@@ -263,7 +263,7 @@ class InputExample(object):
 
 
 class InputFeatures(object):
-    """A single set of features of data."""
+    """A single set of features of squad_data."""
 
     def __init__(self, input_ids, input_mask, segment_ids, is_next, lm_label_ids):
         self.input_ids = input_ids
@@ -579,7 +579,7 @@ def main():
         if args.local_rank == -1:
             train_sampler = RandomSampler(train_dataset)
         else:
-            #TODO: check if this works with current data generator from disk that relies on file.__next__
+            #TODO: check if this works with current squad_data generator from disk that relies on file.__next__
             # (it doesn't return item back by index)
             train_sampler = DistributedSampler(train_dataset)
         train_dataloader = DataLoader(train_dataset, sampler=train_sampler, batch_size=args.train_batch_size)

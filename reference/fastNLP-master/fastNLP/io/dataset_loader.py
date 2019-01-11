@@ -25,7 +25,7 @@ def convert_seq_dataset(data):
 
 
 def convert_seq2tag_dataset(data):
-    """Convert list of data into DataSet.
+    """Convert list of squad_data into DataSet.
 
     :param data: list of list of strings, [num_examples, *].
             Example::
@@ -45,7 +45,7 @@ def convert_seq2tag_dataset(data):
 
 
 def convert_seq2seq_dataset(data):
-    """Convert list of data into DataSet.
+    """Convert list of squad_data into DataSet.
 
     :param data: list of list of strings, [num_examples, *].
             Example::
@@ -70,7 +70,7 @@ class DataSetLoader:
     """
 
     def load(self, path):
-        """Load data from a given file.
+        """Load squad_data from a given file.
 
         :param str path: file path
         :return: a DataSet object
@@ -80,7 +80,7 @@ class DataSetLoader:
     def convert(self, data):
         """Optional operation to build a DataSet.
 
-        :param data: inner data structure (user-defined) to represent the data.
+        :param data: inner squad_data structure (user-defined) to represent the squad_data.
         :return: a DataSet object
         """
         raise NotImplementedError
@@ -104,7 +104,7 @@ DataLoaderRegister.set_reader(NativeDataSetLoader, 'read_naive')
 
 
 class RawDataSetLoader(DataSetLoader):
-    """A simple example of raw data reader
+    """A simple example of raw squad_data reader
 
     """
     def __init__(self):
@@ -147,7 +147,7 @@ class POSDataSetLoader(DataSetLoader):
 
     def load(self, data_path):
         """
-        :return data: three-level list
+        :return squad_data: three-level list
             Example::
                 [
                     [ [word_11, word_12, ...], [label_1, label_1, ...] ],
@@ -196,7 +196,7 @@ DataLoaderRegister.set_reader(POSDataSetLoader, 'read_pos')
 
 class TokenizeDataSetLoader(DataSetLoader):
     """
-    Data set loader for tokenization data sets
+    Data set loader for tokenization squad_data sets
     """
 
     def __init__(self):
@@ -213,7 +213,7 @@ class TokenizeDataSetLoader(DataSetLoader):
         E: ending of a word
         S: single character
 
-        :param str data_path: path to the data set.
+        :param str data_path: path to the squad_data set.
         :param max_seq_len: int, the maximum length of a sequence. If a sequence is longer than it, split it into
                 several sequences.
         :return: three-level lists
@@ -254,7 +254,7 @@ class TokenizeDataSetLoader(DataSetLoader):
 
 
 class ClassDataSetLoader(DataSetLoader):
-    """Loader for a dummy classification data set"""
+    """Loader for a dummy classification squad_data set"""
 
     def __init__(self):
         super(ClassDataSetLoader, self).__init__()
@@ -327,7 +327,7 @@ class ConllLoader(DataSetLoader):
 class LMDataSetLoader(DataSetLoader):
     """Language Model Dataset Loader
 
-    This loader produces data for language model training in a supervised way.
+    This loader produces squad_data for language model training in a supervised way.
     That means it has X and Y.
 
     """
@@ -429,7 +429,7 @@ class Conll2003Loader(DataSetLoader):
     """Self-defined loader of conll2003 dataset
     
         More information about the given dataset cound be found on 
-        https://sites.google.com/site/ermasoftware/getting-started/ne-tagging-conll2003-data 
+        https://sites.google.com/site/ermasoftware/getting-started/ne-tagging-conll2003-squad_data 
     
     """
 
@@ -476,7 +476,7 @@ class Conll2003Loader(DataSetLoader):
 
 
 class SNLIDataSetLoader(DataSetLoader):
-    """A data set loader for SNLI data set.
+    """A squad_data set loader for SNLI squad_data set.
 
     """
 

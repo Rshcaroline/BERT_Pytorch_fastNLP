@@ -163,7 +163,7 @@ class IndexerProcessor(Processor):
 
 
 class VocabProcessor(Processor):
-    """Build vocabulary with a field in the data set.
+    """Build vocabulary with a field in the squad_data set.
 
     """
 

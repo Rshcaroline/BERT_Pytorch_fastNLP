@@ -11,7 +11,7 @@ from fastNLP.io.base_loader import DataLoaderRegister
 class DataSet(object):
     """DataSet is the collection of examples.
     DataSet provides instance-level interface. You can append and access an instance of the DataSet.
-    However, it stores data in a different way: Field-first, Instance-second.
+    However, it stores squad_data in a different way: Field-first, Instance-second.
 
     """
 
@@ -19,9 +19,9 @@ class DataSet(object):
         """
 
         :param data: a dict or a list.
-                If `data` is a dict, the key is the name of a FieldArray and the value is the FieldArray. All values
+                If `squad_data` is a dict, the key is the name of a FieldArray and the value is the FieldArray. All values
                 must be of the same length.
-                If `data` is a list, it must be a list of Instance objects.
+                If `squad_data` is a list, it must be a list of Instance objects.
         """
         self.field_arrays = {}
         if data is not None:
@@ -38,7 +38,7 @@ class DataSet(object):
                     self.append(ins)
 
             else:
-                raise ValueError("data only be dict or list type.")
+                raise ValueError("squad_data only be dict or list type.")
 
     def __contains__(self, item):
         return item in self.field_arrays
@@ -182,7 +182,7 @@ class DataSet(object):
     def get_all_fields(self):
         """Return all the fields with their names.
 
-        :return field_arrays: the internal data structure of DataSet.
+        :return field_arrays: the internal squad_data structure of DataSet.
         """
         return self.field_arrays
 
@@ -293,7 +293,7 @@ class DataSet(object):
     def split(self, dev_ratio):
         """Split the dataset into training and development(validation) set.
 
-        :param float dev_ratio: the ratio of test set in all data.
+        :param float dev_ratio: the ratio of test set in all squad_data.
         :return (train_set, dev_set):
                 train_set: the training set
                 dev_set: the development set
@@ -321,13 +321,13 @@ class DataSet(object):
 
     @classmethod
     def read_csv(cls, csv_path, headers=None, sep=",", dropna=True):
-        """Load data from a CSV file and return a DataSet object.
+        """Load squad_data from a CSV file and return a DataSet object.
 
         :param str csv_path: path to the CSV file
         :param List[str] or Tuple[str] headers: headers of the CSV file
         :param str sep: delimiter in CSV file. Default: ","
         :param bool dropna: If True, drop rows that have less entries than headers.
-        :return dataset: the read data set
+        :return dataset: the read squad_data set
 
         """
         with open(csv_path, "r") as f:
@@ -378,7 +378,7 @@ class DataSet(object):
 
 
 def construct_dataset(sentences):
-    """Construct a data set from a list of sentences.
+    """Construct a squad_data set from a list of sentences.
 
     :param sentences: list of list of str
     :return dataset: a DataSet object

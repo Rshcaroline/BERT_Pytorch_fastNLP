@@ -27,8 +27,8 @@ class BERTTrainer:
         """
         :param bert: BERT model which you want to train
         :param vocab_size: total word vocab size
-        :param train_dataloader: train dataset data loader
-        :param test_dataloader: test dataset data loader [can be None]
+        :param train_dataloader: train dataset squad_data loader
+        :param test_dataloader: test dataset squad_data loader [can be None]
         :param lr: learning rate of optimizer
         :param betas: Adam optimizer betas
         :param weight_decay: Adam optimizer weight decay param
@@ -50,7 +50,7 @@ class BERTTrainer:
             print("Using %d GPUS for BERT" % torch.cuda.device_count())
             self.model = nn.DataParallel(self.model, device_ids=cuda_devices)
 
-        # Setting the train and test data loader
+        # Setting the train and test squad_data loader
         self.train_data = train_dataloader
         self.test_data = test_dataloader
 
@@ -78,7 +78,7 @@ class BERTTrainer:
         and also auto save the model every peoch
 
         :param epoch: current epoch index
-        :param data_loader: torch.utils.data.DataLoader for iteration
+        :param data_loader: torch.utils.squad_data.DataLoader for iteration
         :param train: boolean value of is train or test
         :return: None
         """

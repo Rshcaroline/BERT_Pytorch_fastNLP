@@ -28,7 +28,7 @@ from fastNLP.core.utils import get_func_signature
 
 class Trainer(object):
     """
-        :param DataSet train_data: the training data
+        :param DataSet train_data: the training squad_data
         :param torch.nn.modules.module model: a PyTorch model
         :param LossBase loss: a loss object
         :param MetricBase metrics: a metric object or a list of metrics (List[MetricBase])
@@ -36,7 +36,7 @@ class Trainer(object):
         :param int batch_size: batch size for training and validation
         :param int print_every: step interval to print next training information. Default: -1(no print).
         :param int validate_every: step interval to do next validation. Default: -1(validate every epoch).
-        :param DataSet dev_data: the validation data
+        :param DataSet dev_data: the validation squad_data
         :param bool use_cuda: whether to use CUDA in training.
         :param str save_path: file path to save models
         :param Optimizer optimizer: an optimizer object
@@ -49,7 +49,7 @@ class Trainer(object):
 
                     metric_key="-PPL"   # language model gets better as perplexity gets smaller
 
-        :param BaseSampler sampler: method used to generate batch data.
+        :param BaseSampler sampler: method used to generate batch squad_data.
         :param bool use_tqdm: whether to use tqdm to show train progress.
 
     """

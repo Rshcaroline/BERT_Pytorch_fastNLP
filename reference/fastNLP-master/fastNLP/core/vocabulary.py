@@ -178,7 +178,7 @@ class Vocabulary(object):
         return self.idx2word[idx]
 
     def __getstate__(self):
-        """Use to prepare data for pickle.
+        """Use to prepare squad_data for pickle.
 
         """
         state = self.__dict__.copy()

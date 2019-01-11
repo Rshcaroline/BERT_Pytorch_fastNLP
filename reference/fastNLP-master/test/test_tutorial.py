@@ -18,7 +18,7 @@ class TestTutorial(unittest.TestCase):
         print(len(dataset))
         print(dataset[0])
 
-        dataset.append(Instance(raw_sentence='fake data', label='0'))
+        dataset.append(Instance(raw_sentence='fake squad_data', label='0'))
         dataset.apply(lambda x: x['raw_sentence'].lower(), new_field_name='raw_sentence')
         # label转int
         dataset.apply(lambda x: int(x['label']), new_field_name='label')

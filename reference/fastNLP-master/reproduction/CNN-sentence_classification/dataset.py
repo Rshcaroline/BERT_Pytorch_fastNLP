@@ -36,7 +36,7 @@ def pad_sentences(sentence, padding_word=" <PAD/>"):
     return padded_sentence
 
 
-# data loader
+# squad_data loader
 class MRDataset(Dataset):
     def __init__(self):
 

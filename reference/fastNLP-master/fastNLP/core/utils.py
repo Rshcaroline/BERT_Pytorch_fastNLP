@@ -189,7 +189,7 @@ def _check_function_or_method(func):
 def _move_dict_value_to_device(*args, device: torch.device):
     """
 
-    move data to model's device, element in *args should be dict. This is a inplace change.
+    move squad_data to model's device, element in *args should be dict. This is a inplace change.
     :param device: torch.device
     :param args:
     :return:

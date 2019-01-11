@@ -128,7 +128,7 @@ def read_swag_examples(input_file, is_training):
 
 def convert_examples_to_features(examples, tokenizer, max_seq_length,
                                  is_training):
-    """Loads a data file into a list of `InputBatch`s."""
+    """Loads a squad_data file into a list of `InputBatch`s."""
 
     # Swag is a multiple choice task. To perform this task using Bert,
     # we will use the formatting proposed in "Improving Language
@@ -246,7 +246,7 @@ def main():
                         default=None,
                         type=str,
                         required=True,
-                        help="The input data dir. Should contain the .csv files (or other data files) for the task.")
+                        help="The input squad_data dir. Should contain the .csv files (or other squad_data files) for the task.")
     parser.add_argument("--bert_model", default=None, type=str, required=True,
                         help="Bert pre-trained model selected in the list: bert-base-uncased, "
                         "bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, "
@@ -489,7 +489,7 @@ def main():
         all_segment_ids = torch.tensor(select_field(eval_features, 'segment_ids'), dtype=torch.long)
         all_label = torch.tensor([f.label for f in eval_features], dtype=torch.long)
         eval_data = TensorDataset(all_input_ids, all_input_mask, all_segment_ids, all_label)
-        # Run prediction for full data
+        # Run prediction for full squad_data
         eval_sampler = SequentialSampler(eval_data)
         eval_dataloader = DataLoader(eval_data, sampler=eval_sampler, batch_size=args.eval_batch_size)
 

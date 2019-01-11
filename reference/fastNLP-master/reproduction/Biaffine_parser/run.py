@@ -108,18 +108,18 @@ class CTBDataLoader(object):
                                     head_labels=TextField(head_tags, is_target=True)))
         return dataset
 
-# datadir = "/mnt/c/Me/Dev/release-2.2-st-train-dev-data/ud-treebanks-v2.2/UD_English-EWT"
+# datadir = "/mnt/c/Me/Dev/release-2.2-st-train-dev-squad_data/ud-treebanks-v2.2/UD_English-EWT"
 # datadir = "/home/yfshao/UD_English-EWT"
 # train_data_name = "en_ewt-ud-train.conllu"
 # dev_data_name = "en_ewt-ud-dev.conllu"
 # emb_file_name = '/home/yfshao/glove.6B.100d.txt'
 # loader = ConlluDataLoader()
 
-datadir = '/home/yfshao/workdir/parser-data/'
+datadir = '/home/yfshao/workdir/parser-squad_data/'
 train_data_name = "train_ctb5.txt"
 dev_data_name = "dev_ctb5.txt"
 test_data_name = "test_ctb5.txt"
-emb_file_name = "/home/yfshao/workdir/parser-data/word_OOVthr_30_100v.txt"
+emb_file_name = "/home/yfshao/workdir/parser-squad_data/word_OOVthr_30_100v.txt"
 # emb_file_name = "/home/yfshao/workdir/word_vector/cc.zh.300.vec"
 loader = CTBDataLoader()
 
@@ -220,7 +220,7 @@ try:
     print('use saved pickles')
 
 except Exception as _:
-    print('load raw data and preprocess')
+    print('load raw squad_data and preprocess')
     # use pretrain embedding
     word_v = Vocabulary(need_default=True, min_freq=2)
     word_v.unknown_label = UNK
@@ -326,11 +326,11 @@ def test(path):
         raise
 
     # Start training
-    print("Testing Train data")
+    print("Testing Train squad_data")
     tester.test(model, train_data)
-    print("Testing Dev data")
+    print("Testing Dev squad_data")
     tester.test(model, dev_data)
-    print("Testing Test data")
+    print("Testing Test squad_data")
     tester.test(model, test_data)
 
 

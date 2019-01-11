@@ -64,7 +64,7 @@ class InputExample(object):
 
 
 class InputFeatures(object):
-    """A single set of features of data."""
+    """A single set of features of squad_data."""
 
     def __init__(self, input_ids, input_mask, segment_ids, label_id):
         self.input_ids = input_ids
@@ -74,7 +74,7 @@ class InputFeatures(object):
 
 
 class DataProcessor(object):
-    """Base class for data converters for sequence classification data sets."""
+    """Base class for squad_data converters for sequence classification squad_data sets."""
 
     def get_train_examples(self, data_dir):
         """Gets a collection of `InputExample`s for the train set."""
@@ -85,7 +85,7 @@ class DataProcessor(object):
         raise NotImplementedError()
 
     def get_labels(self):
-        """Gets the list of labels for this data set."""
+        """Gets the list of labels for this squad_data set."""
         raise NotImplementedError()
 
     @classmethod
@@ -100,7 +100,7 @@ class DataProcessor(object):
 
 
 class MrpcProcessor(DataProcessor):
-    """Processor for the MRPC data set (GLUE version)."""
+    """Processor for the MRPC squad_data set (GLUE version)."""
 
     def get_train_examples(self, data_dir):
         """See base class."""
@@ -133,7 +133,7 @@ class MrpcProcessor(DataProcessor):
 
 
 class MnliProcessor(DataProcessor):
-    """Processor for the MultiNLI data set (GLUE version)."""
+    """Processor for the MultiNLI squad_data set (GLUE version)."""
 
     def get_train_examples(self, data_dir):
         """See base class."""
@@ -166,7 +166,7 @@ class MnliProcessor(DataProcessor):
 
 
 class ColaProcessor(DataProcessor):
-    """Processor for the CoLA data set (GLUE version)."""
+    """Processor for the CoLA squad_data set (GLUE version)."""
 
     def get_train_examples(self, data_dir):
         """See base class."""
@@ -195,7 +195,7 @@ class ColaProcessor(DataProcessor):
 
 
 def convert_examples_to_features(examples, label_list, max_seq_length, tokenizer):
-    """Loads a data file into a list of `InputBatch`s."""
+    """Loads a squad_data file into a list of `InputBatch`s."""
 
     label_map = {label : i for i, label in enumerate(label_list)}
 
@@ -309,7 +309,7 @@ def main():
                         default='./glue_data/MRPC', # None,
                         type=str,
                         required=False, # True
-                        help="The input data dir. Should contain the .tsv files (or other data files) for the task.")
+                        help="The input squad_data dir. Should contain the .tsv files (or other squad_data files) for the task.")
     parser.add_argument("--bert_model", default='bert-base-uncased', type=str, required=False,
                         help="Bert pre-trained model selected in the list: bert-base-uncased, "
                         "bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, "
@@ -572,7 +572,7 @@ def main():
         all_segment_ids = torch.tensor([f.segment_ids for f in eval_features], dtype=torch.long)
         all_label_ids = torch.tensor([f.label_id for f in eval_features], dtype=torch.long)
         eval_data = TensorDataset(all_input_ids, all_input_mask, all_segment_ids, all_label_ids)
-        # Run prediction for full data
+        # Run prediction for full squad_data
         eval_sampler = SequentialSampler(eval_data)
         eval_dataloader = DataLoader(eval_data, sampler=eval_sampler, batch_size=args.eval_batch_size)
 

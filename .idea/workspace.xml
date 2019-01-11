@@ -2,13 +2,44 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66622c49-7dd1-444a-8a38-7e50eeb27460" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/bert_pytorch/modules/utils/optimization.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bert_pytorch/tasks/SequenceClassification/download_glue_data.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bert_pytorch/tasks/SequenceClassification/run_classifier.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bert_pytorch/tasks/SequenceClassification/run_classifier.sh" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/bert_pytorch/tasks/QuestionAnswering/evaluate-v1.1.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/bert_pytorch/tasks/QuestionAnswering/run_squad.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/bert_pytorch/tasks/QuestionAnswering/run_squad.sh" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/bert_pytorch/models/bert.py" afterPath="$PROJECT_DIR$/bert_pytorch/models/bert.py" />
-      <change beforePath="$PROJECT_DIR$/bert_pytorch/test/using_bert.py" afterPath="$PROJECT_DIR$/bert_pytorch/test/using_bert.py" />
+      <change beforePath="$PROJECT_DIR$/bert_pytorch/modules/utils/tokenization.py" afterPath="$PROJECT_DIR$/bert_pytorch/modules/utils/tokenization.py" />
+      <change beforePath="$PROJECT_DIR$/bert_pytorch/tasks/SequenceClassification/download_glue_data.py" afterPath="$PROJECT_DIR$/bert_pytorch/tasks/SequenceClassification/download_glue_data.py" />
+      <change beforePath="$PROJECT_DIR$/bert_pytorch/tasks/SequenceClassification/run_classifier.py" afterPath="$PROJECT_DIR$/bert_pytorch/tasks/SequenceClassification/run_classifier.py" />
+      <change beforePath="$PROJECT_DIR$/bert_pytorch/tasks/SequenceClassification/run_classifier.sh" afterPath="$PROJECT_DIR$/bert_pytorch/tasks/SequenceClassification/run_classifier.sh" />
+      <change beforePath="$PROJECT_DIR$/reference/BERT-pytorch-master/bert_pytorch/dataset/vocab.py" afterPath="$PROJECT_DIR$/reference/BERT-pytorch-master/bert_pytorch/dataset/vocab.py" />
+      <change beforePath="$PROJECT_DIR$/reference/BERT-pytorch-master/bert_pytorch/trainer/pretrain.py" afterPath="$PROJECT_DIR$/reference/BERT-pytorch-master/bert_pytorch/trainer/pretrain.py" />
+      <change beforePath="$PROJECT_DIR$/reference/fastNLP-master/fastNLP/api/processor.py" afterPath="$PROJECT_DIR$/reference/fastNLP-master/fastNLP/api/processor.py" />
+      <change beforePath="$PROJECT_DIR$/reference/fastNLP-master/fastNLP/core/dataset.py" afterPath="$PROJECT_DIR$/reference/fastNLP-master/fastNLP/core/dataset.py" />
+      <change beforePath="$PROJECT_DIR$/reference/fastNLP-master/fastNLP/core/instance.py" afterPath="$PROJECT_DIR$/reference/fastNLP-master/fastNLP/core/instance.py" />
+      <change beforePath="$PROJECT_DIR$/reference/fastNLP-master/fastNLP/core/sampler.py" afterPath="$PROJECT_DIR$/reference/fastNLP-master/fastNLP/core/sampler.py" />
+      <change beforePath="$PROJECT_DIR$/reference/fastNLP-master/fastNLP/core/tester.py" afterPath="$PROJECT_DIR$/reference/fastNLP-master/fastNLP/core/tester.py" />
+      <change beforePath="$PROJECT_DIR$/reference/fastNLP-master/fastNLP/core/trainer.py" afterPath="$PROJECT_DIR$/reference/fastNLP-master/fastNLP/core/trainer.py" />
+      <change beforePath="$PROJECT_DIR$/reference/fastNLP-master/fastNLP/core/utils.py" afterPath="$PROJECT_DIR$/reference/fastNLP-master/fastNLP/core/utils.py" />
+      <change beforePath="$PROJECT_DIR$/reference/fastNLP-master/fastNLP/core/vocabulary.py" afterPath="$PROJECT_DIR$/reference/fastNLP-master/fastNLP/core/vocabulary.py" />
+      <change beforePath="$PROJECT_DIR$/reference/fastNLP-master/fastNLP/io/base_loader.py" afterPath="$PROJECT_DIR$/reference/fastNLP-master/fastNLP/io/base_loader.py" />
+      <change beforePath="$PROJECT_DIR$/reference/fastNLP-master/fastNLP/io/config_io.py" afterPath="$PROJECT_DIR$/reference/fastNLP-master/fastNLP/io/config_io.py" />
+      <change beforePath="$PROJECT_DIR$/reference/fastNLP-master/fastNLP/io/dataset_loader.py" afterPath="$PROJECT_DIR$/reference/fastNLP-master/fastNLP/io/dataset_loader.py" />
+      <change beforePath="$PROJECT_DIR$/reference/fastNLP-master/fastNLP/io/embed_loader.py" afterPath="$PROJECT_DIR$/reference/fastNLP-master/fastNLP/io/embed_loader.py" />
+      <change beforePath="$PROJECT_DIR$/reference/fastNLP-master/reproduction/Biaffine_parser/run.py" afterPath="$PROJECT_DIR$/reference/fastNLP-master/reproduction/Biaffine_parser/run.py" />
+      <change beforePath="$PROJECT_DIR$/reference/fastNLP-master/reproduction/CNN-sentence_classification/dataset.py" afterPath="$PROJECT_DIR$/reference/fastNLP-master/reproduction/CNN-sentence_classification/dataset.py" />
+      <change beforePath="$PROJECT_DIR$/reference/fastNLP-master/reproduction/Char-aware_NLM/test.py" afterPath="$PROJECT_DIR$/reference/fastNLP-master/reproduction/Char-aware_NLM/test.py" />
+      <change beforePath="$PROJECT_DIR$/reference/fastNLP-master/reproduction/Char-aware_NLM/train.py" afterPath="$PROJECT_DIR$/reference/fastNLP-master/reproduction/Char-aware_NLM/train.py" />
+      <change beforePath="$PROJECT_DIR$/reference/fastNLP-master/reproduction/HAN-document_classification/train.py" afterPath="$PROJECT_DIR$/reference/fastNLP-master/reproduction/HAN-document_classification/train.py" />
+      <change beforePath="$PROJECT_DIR$/reference/fastNLP-master/reproduction/LSTM+self_attention_sentiment_analysis/dataloader.py" afterPath="$PROJECT_DIR$/reference/fastNLP-master/reproduction/LSTM+self_attention_sentiment_analysis/dataloader.py" />
+      <change beforePath="$PROJECT_DIR$/reference/fastNLP-master/reproduction/LSTM+self_attention_sentiment_analysis/main.py" afterPath="$PROJECT_DIR$/reference/fastNLP-master/reproduction/LSTM+self_attention_sentiment_analysis/main.py" />
+      <change beforePath="$PROJECT_DIR$/reference/fastNLP-master/reproduction/chinese_word_segment/run.py" afterPath="$PROJECT_DIR$/reference/fastNLP-master/reproduction/chinese_word_segment/run.py" />
+      <change beforePath="$PROJECT_DIR$/reference/fastNLP-master/test/test_tutorial.py" afterPath="$PROJECT_DIR$/reference/fastNLP-master/test/test_tutorial.py" />
+      <change beforePath="$PROJECT_DIR$/reference/pytorch-pretrained-BERT-master/examples/extract_features.py" afterPath="$PROJECT_DIR$/reference/pytorch-pretrained-BERT-master/examples/extract_features.py" />
+      <change beforePath="$PROJECT_DIR$/reference/pytorch-pretrained-BERT-master/examples/run_classifier.py" afterPath="$PROJECT_DIR$/reference/pytorch-pretrained-BERT-master/examples/run_classifier.py" />
+      <change beforePath="$PROJECT_DIR$/reference/pytorch-pretrained-BERT-master/examples/run_lm_finetuning.py" afterPath="$PROJECT_DIR$/reference/pytorch-pretrained-BERT-master/examples/run_lm_finetuning.py" />
+      <change beforePath="$PROJECT_DIR$/reference/pytorch-pretrained-BERT-master/examples/run_squad.py" afterPath="$PROJECT_DIR$/reference/pytorch-pretrained-BERT-master/examples/run_squad.py" />
+      <change beforePath="$PROJECT_DIR$/reference/pytorch-pretrained-BERT-master/examples/run_swag.py" afterPath="$PROJECT_DIR$/reference/pytorch-pretrained-BERT-master/examples/run_swag.py" />
+      <change beforePath="$PROJECT_DIR$/reference/pytorch-pretrained-BERT-master/pytorch_pretrained_bert/tokenization.py" afterPath="$PROJECT_DIR$/reference/pytorch-pretrained-BERT-master/pytorch_pretrained_bert/tokenization.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,15 +53,15 @@
     <SUITE FILE_PATH="coverage/BERT_Pytorch_fastNLP$extract_features.coverage" NAME="extract_features Coverage Results" MODIFIED="1547134259194" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/reference/pytorch-pretrained-BERT-master/examples" />
     <SUITE FILE_PATH="coverage/BERT_Pytorch_fastNLP$download_glue_data.coverage" NAME="download_glue_data Coverage Results" MODIFIED="1547193463559" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bert_pytorch/tasks/SequenceClassification" />
     <SUITE FILE_PATH="coverage/BERT_Pytorch_fastNLP$using_bert.coverage" NAME="using_bert Coverage Results" MODIFIED="1547191278652" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bert_pytorch/test" />
-    <SUITE FILE_PATH="coverage/BERT_Pytorch_fastNLP$run_classifier__1_.coverage" NAME="run_classifier (1) Coverage Results" MODIFIED="1547195328340" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bert_pytorch/tasks/SequenceClassification" />
+    <SUITE FILE_PATH="coverage/BERT_Pytorch_fastNLP$run_classifier__1_.coverage" NAME="run_classifier (1) Coverage Results" MODIFIED="1547196761572" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bert_pytorch/tasks/SequenceClassification" />
   </component>
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="bert.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bert_pytorch/models/bert.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="406" column="30" lean-forward="false" selection-start-line="406" selection-start-column="30" selection-end-line="406" selection-end-column="30" />
+            <state relative-caret-position="-749">
+              <caret line="476" column="0" lean-forward="false" selection-start-line="476" selection-start-column="0" selection-end-line="476" selection-end-column="0" />
               <folding>
                 <element signature="e#191#200#0" expanded="true" />
               </folding>
@@ -38,11 +69,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="run_classifier.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="run_squad.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bert_pytorch/tasks/QuestionAnswering/run_squad.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-22">
+              <caret line="688" column="23" lean-forward="false" selection-start-line="688" selection-start-column="23" selection-end-line="688" selection-end-column="23" />
+              <folding>
+                <element signature="e#734#772#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="run_classifier.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bert_pytorch/tasks/SequenceClassification/run_classifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="319" column="39" lean-forward="true" selection-start-line="319" selection-start-column="39" selection-end-line="319" selection-end-column="39" />
+            <state relative-caret-position="194">
+              <caret line="189" column="23" lean-forward="false" selection-start-line="189" selection-start-column="23" selection-end-line="189" selection-end-column="23" />
               <folding>
                 <element signature="e#739#777#0" expanded="true" />
               </folding>
@@ -50,11 +93,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="run_classifier.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bert_pytorch/tasks/SequenceClassification/run_classifier.sh">
+      <file leaf-file-name="run_squad.sh" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bert_pytorch/tasks/QuestionAnswering/run_squad.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="8" column="26" lean-forward="false" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+            <state relative-caret-position="0">
+              <caret line="0" column="29" lean-forward="false" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -63,8 +106,8 @@
       <file leaf-file-name="modeling.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reference/pytorch-pretrained-BERT-master/pytorch_pretrained_bert/modeling.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="877" column="28" lean-forward="false" selection-start-line="877" selection-start-column="28" selection-end-line="877" selection-end-column="28" />
+            <state relative-caret-position="783">
+              <caret line="1064" column="44" lean-forward="false" selection-start-line="1064" selection-start-column="44" selection-end-line="1064" selection-end-column="44" />
               <folding>
                 <element signature="e#735#773#0" expanded="true" />
               </folding>
@@ -140,6 +183,7 @@
       <find>BertForSequenceClassification</find>
       <find>do_train</find>
       <find>output_dir</find>
+      <find>BertForQuestionAnswering</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -157,11 +201,14 @@
         <option value="$PROJECT_DIR$/bert_pytorch/modules/encoder/bert_embedding.py" />
         <option value="$PROJECT_DIR$/bert_pytorch/test/using_bert.py" />
         <option value="$PROJECT_DIR$/bert_pytorch/tasks/run_classifier.py" />
-        <option value="$PROJECT_DIR$/bert_pytorch/models/bert.py" />
         <option value="$PROJECT_DIR$/bert_pytorch/tasks/run_classifier.sh" />
-        <option value="$PROJECT_DIR$/bert_pytorch/tasks/SequenceClassification/run_classifier.sh" />
         <option value="$PROJECT_DIR$/bert_pytorch/tasks/SequenceClassification/download_glue_data.py" />
+        <option value="$PROJECT_DIR$/bert_pytorch/tasks/SequenceClassification/run_classifier.sh" />
+        <option value="$PROJECT_DIR$/bert_pytorch/tasks/QuestionAnswering/run_squad.py" />
+        <option value="$PROJECT_DIR$/bert_pytorch/models/bert.py" />
+        <option value="$PROJECT_DIR$/bert_pytorch/tasks/QuestionAnswering/evaluate-v1.1.py" />
         <option value="$PROJECT_DIR$/bert_pytorch/tasks/SequenceClassification/run_classifier.py" />
+        <option value="$PROJECT_DIR$/bert_pytorch/tasks/QuestionAnswering/run_squad.sh" />
       </list>
     </option>
   </component>
@@ -255,6 +302,13 @@
               <item name="BERT_Pytorch_fastNLP" type="462c0819:PsiDirectoryNode" />
               <item name="bert_pytorch" type="462c0819:PsiDirectoryNode" />
               <item name="tasks" type="462c0819:PsiDirectoryNode" />
+              <item name="QuestionAnswering" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BERT_Pytorch_fastNLP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BERT_Pytorch_fastNLP" type="462c0819:PsiDirectoryNode" />
+              <item name="bert_pytorch" type="462c0819:PsiDirectoryNode" />
+              <item name="tasks" type="462c0819:PsiDirectoryNode" />
               <item name="SequenceClassification" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -267,27 +321,6 @@
               <item name="BERT_Pytorch_fastNLP" type="b2602c69:ProjectViewProjectNode" />
               <item name="BERT_Pytorch_fastNLP" type="462c0819:PsiDirectoryNode" />
               <item name="reference" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BERT_Pytorch_fastNLP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BERT_Pytorch_fastNLP" type="462c0819:PsiDirectoryNode" />
-              <item name="reference" type="462c0819:PsiDirectoryNode" />
-              <item name="fastNLP-master" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BERT_Pytorch_fastNLP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BERT_Pytorch_fastNLP" type="462c0819:PsiDirectoryNode" />
-              <item name="reference" type="462c0819:PsiDirectoryNode" />
-              <item name="fastNLP-master" type="462c0819:PsiDirectoryNode" />
-              <item name="fastNLP" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BERT_Pytorch_fastNLP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BERT_Pytorch_fastNLP" type="462c0819:PsiDirectoryNode" />
-              <item name="reference" type="462c0819:PsiDirectoryNode" />
-              <item name="fastNLP-master" type="462c0819:PsiDirectoryNode" />
-              <item name="fastNLP" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BERT_Pytorch_fastNLP" type="b2602c69:ProjectViewProjectNode" />
@@ -323,6 +356,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/bert_pytorch/tasks/QuestionAnswering" />
       <recent name="$PROJECT_DIR$/bert_pytorch/modules/utils" />
       <recent name="$PROJECT_DIR$/bert_pytorch/tasks" />
     </key>
@@ -475,16 +509,18 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39903265" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39903265" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36638454" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39903265" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -493,7 +529,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -872,26 +907,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reference/pytorch-pretrained-BERT-master/pytorch_pretrained_bert/modeling.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="877" column="28" lean-forward="false" selection-start-line="877" selection-start-column="28" selection-end-line="877" selection-end-column="28" />
-          <folding>
-            <element signature="e#735#773#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bert_pytorch/models/bert.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="406" column="30" lean-forward="false" selection-start-line="406" selection-start-column="30" selection-end-line="406" selection-end-column="30" />
-          <folding>
-            <element signature="e#191#200#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bert_pytorch/tasks/SequenceClassification/download_glue_data.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-420">
@@ -922,19 +937,75 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bert_pytorch/tasks/SequenceClassification/run_classifier.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="8" column="26" lean-forward="false" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+        <state relative-caret-position="0">
+          <caret line="0" column="27" lean-forward="false" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reference/pytorch-pretrained-BERT-master/pytorch_pretrained_bert/modeling.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="783">
+          <caret line="1064" column="44" lean-forward="false" selection-start-line="1064" selection-start-column="44" selection-end-line="1064" selection-end-column="44" />
+          <folding>
+            <element signature="e#735#773#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bert_pytorch/models/bert.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-749">
+          <caret line="476" column="0" lean-forward="false" selection-start-line="476" selection-start-column="0" selection-end-line="476" selection-end-column="0" />
+          <folding>
+            <element signature="e#191#200#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reference/pytorch-pretrained-BERT-master/examples/run_squad.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="799" column="36" lean-forward="false" selection-start-line="799" selection-start-column="12" selection-end-line="799" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bert_pytorch/tasks/QuestionAnswering/evaluate-v1.1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2232">
+          <caret line="93" column="53" lean-forward="false" selection-start-line="93" selection-start-column="53" selection-end-line="93" selection-end-column="53" />
+          <folding>
+            <element signature="e#66#103#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bert_pytorch/tasks/QuestionAnswering/run_squad.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-22">
+          <caret line="688" column="23" lean-forward="false" selection-start-line="688" selection-start-column="23" selection-end-line="688" selection-end-column="23" />
+          <folding>
+            <element signature="e#734#772#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bert_pytorch/tasks/SequenceClassification/run_classifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="319" column="39" lean-forward="true" selection-start-line="319" selection-start-column="39" selection-end-line="319" selection-end-column="39" />
+        <state relative-caret-position="194">
+          <caret line="189" column="23" lean-forward="false" selection-start-line="189" selection-start-column="23" selection-end-line="189" selection-end-column="23" />
           <folding>
             <element signature="e#739#777#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bert_pytorch/tasks/QuestionAnswering/run_squad.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="29" lean-forward="false" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>

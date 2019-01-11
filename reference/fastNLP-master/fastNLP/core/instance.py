@@ -1,5 +1,5 @@
 class Instance(object):
-    """An Instance is an example of data.
+    """An Instance is an example of squad_data.
         Example::
             ins = Instance(field_1=[1, 1, 1], field_2=[2, 2, 2])
             ins["field_1"]

@@ -34,7 +34,7 @@ class BaseLoader(object):
 
 
 class DataLoaderRegister:
-    """Register for all data sets.
+    """Register for all squad_data sets.
 
     """
     _readers = {}

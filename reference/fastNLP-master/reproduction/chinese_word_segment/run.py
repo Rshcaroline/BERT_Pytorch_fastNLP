@@ -17,7 +17,7 @@ from fastNLP.core.metrics import SeqLabelEvaluator
 # not in the file's dir
 if len(os.path.dirname(__file__)) != 0:
     os.chdir(os.path.dirname(__file__))
-datadir = "/home/zyfeng/data/"
+datadir = "/home/zyfeng/squad_data/"
 cfgfile = './cws.cfg'
 
 cws_data_path = os.path.join(datadir, "pku_training.utf8")
@@ -49,7 +49,7 @@ def infer():
     # Data Loader
     infer_data = SeqLabelDataSet(load_func=BaseLoader.load_lines)
     infer_data.load(data_infer_path, vocabs={"word_vocab": word2index}, infer=True)
-    print('data loaded')
+    print('squad_data loaded')
 
     # Inference interface
     infer = SeqLabelInfer(pickle_path)
@@ -65,7 +65,7 @@ def train():
     test_args = ConfigSection()
     ConfigLoader().load_config(cfgfile, {"train": train_args, "test": test_args})
 
-    print("loading data set...")
+    print("loading squad_data set...")
     data = SeqLabelDataSet(load_func=TokenizeDataSetLoader.load)
     data.load(cws_data_path)
     data_train, data_dev = data.split(ratio=0.3)
@@ -115,7 +115,7 @@ def predict():
     index2label = load_pickle(pickle_path, "label2id.pkl")
     test_args["num_classes"] = len(index2label)
 
-    # load dev data
+    # load dev squad_data
     dev_data = load_pickle(pickle_path, "data_dev.pkl")
 
     # Define the same model

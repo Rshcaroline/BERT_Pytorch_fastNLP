@@ -28,7 +28,7 @@ class Tester(object):
         super(Tester, self).__init__()
 
         if not isinstance(data, DataSet):
-            raise TypeError(f"The type of data must be `fastNLP.DataSet`, got `{type(data)}`.")
+            raise TypeError(f"The type of squad_data must be `fastNLP.DataSet`, got `{type(squad_data)}`.")
         if not isinstance(model, nn.Module):
             raise TypeError(f"The type of model must be `torch.nn.Module`, got `{type(model)}`.")
 

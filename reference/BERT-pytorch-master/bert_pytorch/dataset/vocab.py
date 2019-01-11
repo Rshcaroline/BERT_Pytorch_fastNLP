@@ -7,7 +7,7 @@ class TorchVocab(object):
     """Defines a vocabulary object that will be used to numericalize a field.
     Attributes:
         freqs: A collections.Counter object holding the frequencies of tokens
-            in the data used to build the Vocab.
+            in the squad_data used to build the Vocab.
         stoi: A collections.defaultdict instance mapping token strings to
             numerical identifiers.
         itos: A list of token strings indexed by their numerical identifiers.
@@ -18,7 +18,7 @@ class TorchVocab(object):
         """Create a Vocab object from a collections.Counter.
         Arguments:
             counter: collections.Counter object holding the frequencies of
-                each value found in the data.
+                each value found in the squad_data.
             max_size: The maximum size of the vocabulary, or None for no
                 maximum. Default: None.
             min_freq: The minimum frequency needed to include a token in the

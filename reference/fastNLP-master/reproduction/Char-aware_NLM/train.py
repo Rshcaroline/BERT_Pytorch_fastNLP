@@ -219,7 +219,7 @@ if __name__ == "__main__":
                      test_input=test_set,
                      test_label=test_label)
 
-    print("Loaded data sets. Start building network.")
+    print("Loaded squad_data sets. Start building network.")
 
     USE_GPU = True
     cnn_batch_size = 700

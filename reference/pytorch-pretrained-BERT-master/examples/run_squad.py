@@ -79,7 +79,7 @@ class SquadExample(object):
 
 
 class InputFeatures(object):
-    """A single set of features of data."""
+    """A single set of features of squad_data."""
 
     def __init__(self,
                  unique_id,
@@ -109,7 +109,7 @@ class InputFeatures(object):
 def read_squad_examples(input_file, is_training):
     """Read a SQuAD json file into a list of SquadExample."""
     with open(input_file, "r", encoding='utf-8') as reader:
-        input_data = json.load(reader)["data"]
+        input_data = json.load(reader)["squad_data"]
 
     def is_whitespace(c):
         if c == " " or c == "\t" or c == "\r" or c == "\n" or ord(c) == 0x202F:
@@ -177,7 +177,7 @@ def read_squad_examples(input_file, is_training):
 
 def convert_examples_to_features(examples, tokenizer, max_seq_length,
                                  doc_stride, max_query_length, is_training):
-    """Loads a data file into a list of `InputBatch`s."""
+    """Loads a squad_data file into a list of `InputBatch`s."""
 
     unique_id = 1000000000
 
@@ -543,7 +543,7 @@ def write_predictions(all_examples, all_features, all_results, n_best_size,
 def get_final_text(pred_text, orig_text, do_lower_case, verbose_logging=False):
     """Project the tokenized prediction back to the original text."""
 
-    # When we created the data, we kept track of the alignment between original
+    # When we created the squad_data, we kept track of the alignment between original
     # (whitespace tokenized) tokens and our WordPiece tokenized tokens. So
     # now `orig_text` contains the span of our original text corresponding to the
     # span that we predicted.
@@ -715,7 +715,7 @@ def main():
                         help="The maximum length of an answer that can be generated. This is needed because the start "
                              "and end predictions are not conditioned on one another.")
     parser.add_argument("--verbose_logging", action='store_true',
-                        help="If true, all of the warnings related to data processing will be printed. "
+                        help="If true, all of the warnings related to squad_data processing will be printed. "
                              "A number of warnings are expected for a normal SQuAD evaluation.")
     parser.add_argument("--no_cuda",
                         action='store_true',
@@ -944,7 +944,7 @@ def main():
         all_segment_ids = torch.tensor([f.segment_ids for f in eval_features], dtype=torch.long)
         all_example_index = torch.arange(all_input_ids.size(0), dtype=torch.long)
         eval_data = TensorDataset(all_input_ids, all_input_mask, all_segment_ids, all_example_index)
-        # Run prediction for full data
+        # Run prediction for full squad_data
         eval_sampler = SequentialSampler(eval_data)
         eval_dataloader = DataLoader(eval_data, sampler=eval_sampler, batch_size=args.predict_batch_size)
 

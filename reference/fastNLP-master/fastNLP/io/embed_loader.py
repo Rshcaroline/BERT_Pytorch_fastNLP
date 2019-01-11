@@ -34,10 +34,10 @@ class EmbedLoader(BaseLoader):
 
     @staticmethod
     def _load_pretrain(emb_file, emb_type):
-        """Read txt data from embedding file and convert to np.array as pre-trained embedding
+        """Read txt squad_data from embedding file and convert to np.array as pre-trained embedding
 
         :param str emb_file: the pre-trained embedding file path
-        :param str emb_type: the pre-trained embedding data format
+        :param str emb_type: the pre-trained embedding squad_data format
         :return: a dict of ``{str: np.array}``
         """
         if emb_type == 'glove':

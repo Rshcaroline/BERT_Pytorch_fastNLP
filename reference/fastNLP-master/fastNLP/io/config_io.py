@@ -66,7 +66,7 @@ class ConfigLoader(BaseLoader):
 
 
 class ConfigSection(object):
-    """ConfigSection is the data structure storing all key-value pairs in one section in a config file.
+    """ConfigSection is the squad_data structure storing all key-value pairs in one section in a config file.
 
     """
 

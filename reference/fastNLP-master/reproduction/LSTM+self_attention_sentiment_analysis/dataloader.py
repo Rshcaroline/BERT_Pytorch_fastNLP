@@ -44,10 +44,10 @@ def pad(X, using_cuda):
 
 class DataLoader(object):
     """
-    load data with form {"feature", "class"}
+    load squad_data with form {"feature", "class"}
 
     Args:
-    fdir : data file address
+    fdir : squad_data file address
     batch_size : batch_size
     shuffle : if True, shuffle dataset every epoch
     using_cuda : if True, return tensors on GPU
