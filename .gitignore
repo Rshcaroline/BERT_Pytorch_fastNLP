@@ -1,6 +1,0 @@
-bert_pytorch/pretrained
-bert_pytorch/tasks/QuestionAnswering/squad_data
-bert_pytorch/tasks/MultipleChoice/swag_data
-bert_pytorch/tasks/SequenceClassification/glue_data
-*.idea
-*.DS_store
