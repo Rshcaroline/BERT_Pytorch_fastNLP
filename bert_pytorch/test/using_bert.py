@@ -33,16 +33,16 @@ tokens_tensor = torch.tensor([indexed_tokens])
 segments_tensors = torch.tensor([segments_ids])
 
 # =================== Method 1: Load pre-trained BertModel (weights) ===================
-model = BertModel.from_pretrained('bert-base-uncased')
-model.eval()
-
-# Predict hidden states features for each layer
-encoded_layers, _ = model(tokens_tensor, segments_tensors)
-# We have a hidden states for each of the 12 layers in model bert-base-uncased
-assert len(encoded_layers) == 12
+# model = BertModel.from_pretrained('bert-base-uncased')
+# model.eval()
+#
+# # Predict hidden states features for each layer
+# encoded_layers, _ = model(tokens_tensor, segments_tensors)
+# # We have a hidden states for each of the 12 layers in model bert-base-uncased
+# assert len(encoded_layers) == 12
 
 # =================== Method 2: Load pre-trained BertForMaskedLM (weights) ===================
-model = BertForMaskedLM.from_pretrained('bert-base-uncased')
+model = BertForMaskedLM.from_pretrained('../pretrained/bert-base-uncased', cache_dir=None)  # ?
 model.eval()
 
 # Predict all tokens

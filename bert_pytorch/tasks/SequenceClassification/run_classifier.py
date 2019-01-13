@@ -310,7 +310,7 @@ def main():
                         type=str,
                         required=False, # True
                         help="The input squad_data dir. Should contain the .tsv files (or other squad_data files) for the task.")
-    parser.add_argument("--bert_model", default='bert-base-uncased', type=str, required=False,
+    parser.add_argument("--bert_model", default='../../pretrained/bert-base-uncased', type=str, required=False,
                         help="Bert pre-trained model selected in the list: bert-base-uncased, "
                         "bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, "
                         "bert-base-multilingual-cased, bert-base-chinese.")

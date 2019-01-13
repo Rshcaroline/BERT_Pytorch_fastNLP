@@ -109,7 +109,7 @@ class InputFeatures(object):
 def read_squad_examples(input_file, is_training):
     """Read a SQuAD json file into a list of SquadExample."""
     with open(input_file, "r", encoding='utf-8') as reader:
-        input_data = json.load(reader)["squad_data"]
+        input_data = json.load(reader)["data"]  # squad_data
 
     def is_whitespace(c):
         if c == " " or c == "\t" or c == "\r" or c == "\n" or ord(c) == 0x202F:
@@ -679,16 +679,16 @@ def main():
     parser = argparse.ArgumentParser()
 
     ## Required parameters
-    parser.add_argument("--bert_model", default=None, type=str, required=True,
+    parser.add_argument("--bert_model", default='../../pretrained/bert-base-uncased', type=str, required=False,
                         help="Bert pre-trained model selected in the list: bert-base-uncased, "
                         "bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, "
                         "bert-base-multilingual-cased, bert-base-chinese.")
-    parser.add_argument("--output_dir", default=None, type=str, required=True,
+    parser.add_argument("--output_dir", default='./squad_output', type=str, required=False,
                         help="The output directory where the model checkpoints and predictions will be written.")
 
     ## Other parameters
-    parser.add_argument("--train_file", default=None, type=str, help="SQuAD json for training. E.g., train-v1.1.json")
-    parser.add_argument("--predict_file", default=None, type=str,
+    parser.add_argument("--train_file", default='./squad_data/train-v1.1.json', type=str, help="SQuAD json for training. E.g., train-v1.1.json")
+    parser.add_argument("--predict_file", default='./squad_data/dev-v1.1.json', type=str,
                         help="SQuAD json for predictions. E.g., dev-v1.1.json or test-v1.1.json")
     parser.add_argument("--max_seq_length", default=384, type=int,
                         help="The maximum total input sequence length after WordPiece tokenization. Sequences "
@@ -698,12 +698,12 @@ def main():
     parser.add_argument("--max_query_length", default=64, type=int,
                         help="The maximum number of tokens for the question. Questions longer than this will "
                              "be truncated to this length.")
-    parser.add_argument("--do_train", action='store_true', help="Whether to run training.")
-    parser.add_argument("--do_predict", action='store_true', help="Whether to run eval on the dev set.")
+    parser.add_argument("--do_train", default=1, type=int, help="Whether to run training.")   # , action='store_true'
+    parser.add_argument("--do_predict", default=1, type=int, help="Whether to run eval on the dev set.")  # , action='store_true'
     parser.add_argument("--train_batch_size", default=32, type=int, help="Total batch size for training.")
     parser.add_argument("--predict_batch_size", default=8, type=int, help="Total batch size for predictions.")
-    parser.add_argument("--learning_rate", default=5e-5, type=float, help="The initial learning rate for Adam.")
-    parser.add_argument("--num_train_epochs", default=3.0, type=float,
+    parser.add_argument("--learning_rate", default=3e-5, type=float, help="The initial learning rate for Adam.")
+    parser.add_argument("--num_train_epochs", default=2.0, type=float,
                         help="Total number of training epochs to perform.")
     parser.add_argument("--warmup_proportion", default=0.1, type=float,
                         help="Proportion of training to perform linear learning rate warmup for. E.g., 0.1 = 10% "
@@ -722,14 +722,14 @@ def main():
                         help="Whether not to use CUDA when available")
     parser.add_argument('--seed',
                         type=int,
-                        default=42,
+                        default=83,
                         help="random seed for initialization")
     parser.add_argument('--gradient_accumulation_steps',
                         type=int,
                         default=1,
                         help="Number of updates steps to accumulate before performing a backward/update pass.")
-    parser.add_argument("--do_lower_case",
-                        action='store_true',
+    parser.add_argument("--do_lower_case", default=1, type=int,
+                        # action='store_true',
                         help="Whether to lower case the input text. True for uncased models, False for cased models.")
     parser.add_argument("--local_rank",
                         type=int,

@@ -5,7 +5,7 @@ python run_swag.py \
   --do_train \
   --do_lower_case \
   --do_eval \
-  --data_dir $SWAG_DIR/data \
+  --data_dir $SWAG_DIR/ \
   --train_batch_size 16 \
   --learning_rate 2e-5 \
   --num_train_epochs 3.0 \
