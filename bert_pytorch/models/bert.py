@@ -19,11 +19,14 @@ import torch
 from torch import nn
 from torch.nn import CrossEntropyLoss
 
-from ..modules.encoder.bert_embedding import BertEmbeddings, BertLayerNorm
-from ..modules.encoder.bert_encoder import BertEncoder
-from ..modules.decoder.bert_decoder import BertOnlyMLMHead, BertOnlyNSPHead, BertPreTrainingHeads
-from ..modules.aggregator.bert_pooler import BertPooler
-from ..modules.utils.file_utils import cached_path
+import sys
+sys.path.append("..")
+
+from modules.encoder.bert_embedding import BertEmbeddings, BertLayerNorm
+from modules.encoder.bert_encoder import BertEncoder
+from modules.decoder.bert_decoder import BertOnlyMLMHead, BertOnlyNSPHead, BertPreTrainingHeads
+from modules.aggregator.bert_pooler import BertPooler
+from modules.utils.file_utils import cached_path
 
 logger = logging.getLogger(__name__)
 
