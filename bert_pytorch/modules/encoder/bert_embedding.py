@@ -8,7 +8,11 @@
 
 import torch
 import torch.nn as nn
-from ..aggregator.bert_attention import BertLayerNorm
+
+import sys
+sys.path.append("..")
+
+from modules.aggregator.bert_attention import BertLayerNorm
 
 
 class BertEmbeddings(nn.Module):
