@@ -453,6 +453,8 @@ def main():
     model = BertForSequenceClassification.from_pretrained(args.bert_model,
               cache_dir=PYTORCH_PRETRAINED_BERT_CACHE / 'distributed_{}'.format(args.local_rank),
               num_labels = num_labels)
+    # print(model)
+
     if args.fp16:
         model.half()
     model.to(device)
