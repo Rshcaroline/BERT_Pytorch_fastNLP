@@ -19,7 +19,7 @@ from __future__ import print_function
 import os
 import unittest
 
-from pytorch_pretrained_bert.tokenization import (BertTokenizer, BasicTokenizer, WordpieceTokenizer,
+from bert_pytorch.modules.utils.tokenization import (BertTokenizer, BasicTokenizer, WordpieceTokenizer,
                                                   _is_whitespace, _is_control, _is_punctuation)
 
 
