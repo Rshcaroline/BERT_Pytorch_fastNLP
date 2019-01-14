@@ -1,0 +1,1 @@
+python evaluate-v1.1.py --dataset_file './squad_data/dev-v1.1.json' --prediction_file './squad_output/predictions.json'
