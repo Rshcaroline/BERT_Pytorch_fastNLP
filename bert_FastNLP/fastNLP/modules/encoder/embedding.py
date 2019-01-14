@@ -1,6 +1,6 @@
 import torch.nn as nn
 
-
+# TODO: inheritance
 class Embedding(nn.Module):
     """A simple lookup table.
 

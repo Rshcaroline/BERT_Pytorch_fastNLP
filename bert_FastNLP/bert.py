@@ -1,13 +1,42 @@
 import torch
-from torch import nn
+import torch.nn as nn
 
-from embedding import BERTEmbedding
+import backbone
+
 from utils import GeLU
-from fastNLP.modules.encoder import TransformerEncoder as Transformer
+from fastNLP.modules.other_modules import LayerNormalization
 
-class BERT(nn.Module):
+
+class BertSC(backbone.Bert):
     """
-    BERT model : Bidirectional Encoder Representations from Transformers.
+    BERT Sequence Classification Model: Bert based classification model for sequence
+    """
+    def __init__(self, vocab_size, hidden=768, n_layers=12, attn_heads=12, dropout=0.1, num_labels=2):
+        """
+        :param vocab_size: vocab_size of total words
+        :param hidden: BERT model hidden size
+        :param n_layers: numbers of Transformer blocks(layers)
+        :param attn_heads: number of attention heads
+        :param dropout: dropout rate
+        :param num_labels: number of output labels
+        """
+        super(BertSC, self).__init__(vocab_size, hidden, n_layers, attn_heads, dropout)
+        self.sc_num_labels = num_labels
+        self.sc_dropout = nn.Dropout(dropout)
+        self.sc_classifier = nn.Linear(hidden, num_labels)
+
+    def forward(self, x, segment_info=None,, labels=None):
+        _, pool_output = self.bert_forward(x, segment_info, all_output=False)
+        
+        pool_output = self.sc_dropout(pool_output)
+        logits = self.sc_classifier(pool_output)
+
+        return logits
+
+
+class BertMLM(backbone.Bert):
+    """
+    BERT Mask Language Model: Bert based model for novel task of mask language model.
     """
 
     def __init__(self, vocab_size, hidden=768, n_layers=12, attn_heads=12, dropout=0.1):
@@ -19,47 +48,30 @@ class BERT(nn.Module):
         :param dropout: dropout rate
         """
 
-        super().__init__()
-        self.hidden = hidden
-        self.n_layers = n_layers
-        self.attn_heads = attn_heads
+        super(BertMLM, self).__init__(vocab_size, hidden, n_layers, attn_heads, dropout)
 
-        # paper noted they used 4*hidden_size for ff_network_hidden_size
-        self.feed_forward_hidden = hidden * 4
+        self.mlm_dense = nn.Linear(hidden, hidden)
+        self.mlm_gelu = GeLU()
+        self.mlm_LayerNorm = LayerNormalization(hidden)
 
-        # embedding for BERT, sum of positional, segment, token embeddings
-        self.embedding = BERTEmbedding(vocab_size=vocab_size, embed_size=hidden, dropout=dropout)
-
-        # multi-layers transformer blocks, deep network
-        self.transformer = Transformer(
-            num_layers=n_layers, 
-            num_atte=attn_heads,
-            input_size=hidden,
-            intermediate_size=self.feed_forward_hidden,
-            key_size=hidden,
-            value_size=hidden,
-            output_size=hidden,
-            activate=GeLU,
-            dropout=dropout,
+        # The output weights are the same as the input embeddings, but there is
+        # an output-only bias for each token.
+        self.mlm_decoder = nn.Linear(
+            self.embedding.token.embed.weight.size(1),
+            self.embedding.token.embed.weight.size(0),
         )
 
-        # Pooling layer
-        self.pooler = nn.Linear(hidden, hidden)
-        self.activation = nn.Tanh()
-
     def forward(self, x, segment_info):
-        # attention masking for padded token
-        # torch.ByteTensor([batch_size, 1, seq_len, seq_len)
-        mask = (x > 0).unsqueeze(1).repeat(1, x.size(1), 1).unsqueeze(1)
+        # backbone bert
+        output_layer, _ = self.bert_forward(x, segment_info, all_output=False)
 
-        # embedding the indexed sequence to sequence of vectors
-        x = self.embedding(x, segment_info)
+        # mlm decoder
+        output = self.mlm_dense(output_layer)
+        output = self.mlm_gelu(output)
+        output = self.mlm_LayerNorm(output)
+        output = self.mlm_decoder(output)
 
-        # running over multiple transformer blocks
-        x = self.transformer.forward(x, mask)
+        # output
+        return output
 
-        cls_token = x[:, 0]
-        pool_output = self.dense(cls_token)
-        pool_output = self.activation(pool_output)
 
-        return x, pool_output

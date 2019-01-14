@@ -24,14 +24,21 @@ class TransformerEncoder(nn.Module):
             self.LayerNorm = LayerNormalization(output_size)
 
         def forward(self, input, seq_mask):
-            attention = self.atte(input)
+            attention = self.atte(input, seq_mask)
             intermediate = self.intermediate(attention)
             output = self.output(intermediate)
             return self.LayerNorm(output + attention)
 
     def __init__(self, num_layers, **kargs):
         super(TransformerEncoder, self).__init__()
-        self.layers = nn.Sequential(*[self.SubLayer(**kargs) for _ in range(num_layers)])
+        self.layers = nn.ModuleList([self.SubLayer(**kargs) for _ in range(num_layers)])
 
-    def forward(self, x, seq_mask=None):
-        return self.layers(x, seq_mask)
+    def forward(self, x, seq_mask=None, all_output=True):
+        all_encoder_layers = []
+        for layer in self.layers:
+            x = layer(x, seq_mask)
+            if all_output:
+                all_encoder_layers.append(x)
+        if not all_output:
+            all_encoder_layers.append(x)
+        return all_encoder_layers

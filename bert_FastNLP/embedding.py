@@ -1,3 +1,4 @@
+import torch
 import torch.nn as nn
 from fastNLP.modules.encoder import Embedding
 from fastNLP.modules.other_modules import LayerNormalization
@@ -28,6 +29,13 @@ class BERTEmbedding(nn.Module):
         self.LayerNorm = LayerNormalization(embed_size)
         self.embed_size = embed_size
 
-    def forward(self, sequence, segment_label):
-        embeddings = self.LayerNorm(self.token(sequence) + self.position(sequence) + self.segment(segment_label))
+    def forward(self, sequence, segment_label=None):
+        seq_length = sequence.size(1)
+        positions = torch.arange(seq_length, dtype=torch.long, device=sequence.device)
+        positions = positions.unsqueeze(0).expand_as(sequence)
+
+        if segment_label is None:
+            segment_label = torch.zeros_like(positions)
+
+        embeddings = self.LayerNorm(self.token(sequence) + self.position(positions) + self.segment(segment_label))
         return self.dropout(embeddings)
