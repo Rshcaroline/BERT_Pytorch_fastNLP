@@ -1,1 +1,1 @@
-python evaluate-v1.1.py --dataset_file './squad_data/dev-v1.1.json' --prediction_file './squad_output/predictions.json'
+python evaluate-v1.1.py --dataset_file './squad_data/dev-v1.1.json' --prediction_file './squad_output_base_epoch_3_batch_12_lr_5e-5/predictions.json'
