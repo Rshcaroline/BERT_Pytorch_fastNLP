@@ -7,6 +7,24 @@ import math
 import torch
 from torch import nn
 
+VOCAB_NAME = 'vocab.txt'
+MODEL_NAME = 'pytorch_model.bin'
+BERT_CONFIG = 'bert_config.json'
+
+BASE = {
+    "hidden": 768,
+    "n_layers": 12,
+    "attn_heads": 12,
+    "dropout": 0.1
+}
+
+LARGE = {
+    "hidden": 1024,
+    "n_layers": 24,
+    "attn_heads": 16,
+    "dropout": 0.1
+}
+
 class GeLU(nn.Module):
     """ 
     Implementation of the gelu activation function.
@@ -18,9 +36,6 @@ class GeLU(nn.Module):
         0.5 * x * (1 + torch.tanh(math.sqrt(2 / math.pi) * (x + 0.044715 * torch.pow(x, 3))))
         """
         return x * 0.5 * (1.0 + torch.erf(x / math.sqrt(2.0)))
-
-
-VOCAB_NAME = 'vocab.txt'
 
 def load_vocab(vocab_file):
     """Loads a vocabulary file into a dictionary."""

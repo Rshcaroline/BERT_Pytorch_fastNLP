@@ -38,7 +38,6 @@ class Bert(nn.Module):
             input_size=hidden,
             intermediate_size=self.feed_forward_hidden,
             key_size=hidden,
-            value_size=hidden,
             output_size=hidden,
             activate=GeLU,
             dropout=dropout,
@@ -48,10 +47,13 @@ class Bert(nn.Module):
         self.pooler = nn.Linear(hidden, hidden)
         self.activation = nn.Tanh()
 
-    def bert_forward(self, x, segment_info, all_output=True):
+    def bert_forward(self, x, segment_info, mask=None, all_output=True):
         # attention masking for padded token
         # torch.ByteTensor([batch_size, 1, seq_len, seq_len)
-        mask = (x > 0).unsqueeze(1).repeat(1, x.size(1), 1).unsqueeze(1).float()
+        if mask is None:
+            mask = (x > 0).unsqueeze(1).repeat(1, x.size(1), 1).unsqueeze(1).float()
+        else:
+            mask = (mask > 0).unsqueeze(1).repeat(1, mask.size(1), 1).unsqueeze(1).float()
 
         # embedding the indexed sequence to sequence of vectors
         x = self.embedding(x, segment_info)
@@ -71,8 +73,8 @@ class Bert(nn.Module):
         else:
             return last_layer, pool_output
 
-    def forward(self, x, segment_info):
-        return self.bert_forward(x, segment_info)
+    def forward(self, x, segment_info, mask=None):
+        return self.bert_forward(x, segment_info, mask)
 
     def load(self, load_path):
         # load pretrained

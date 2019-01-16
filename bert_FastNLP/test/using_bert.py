@@ -20,13 +20,13 @@ from bert import BertMLM
 tokenizer = BertTokenizer.from_pretrained('../converted/base-uncased')
 
 # Tokenized input
-text = "Who was Jim Aaron ? Jim Aaron was a puppeteer"
+text = "Who was Jim Henson ? Jim Henson was a puppeteer"
 tokenized_text = tokenizer.tokenize(text)
 
 # Mask a token that we will try to predict back with `BertForMaskedLM`
 masked_index = 6
 tokenized_text[masked_index] = '[MASK]'
-assert tokenized_text == ['who', 'was', 'jim', 'aaron', '?', 'jim', '[MASK]', 'was', 'a', 'puppet', '##eer']
+assert tokenized_text == ['who', 'was', 'jim', 'henson', '?', 'jim', '[MASK]', 'was', 'a', 'puppet', '##eer']
 
 # Convert token to vocabulary indices
 indexed_tokens = tokenizer.convert_tokens_to_ids(tokenized_text)
@@ -38,6 +38,7 @@ tokens_tensor = torch.tensor([indexed_tokens])
 segments_tensors = torch.tensor([segments_ids])
 
 # =================== Method 1: Load pre-trained BertModel (weights) ===================\
+
 model = Bert(30522)
 model.load('../converted/base-uncased/pytorch_model.bin')
 model.eval()
@@ -54,7 +55,7 @@ model.load('../converted/base-uncased/pytorch_model.bin')
 model.eval()
 
 # Predict all tokens
-predictions = model(tokens_tensor, segments_tensors)
+predictions = model(tokens_tensor, segments_tensors)['pred']
 
 # confirm we were able to predict 'henson'
 predicted_index = torch.argmax(predictions[0, masked_index]).item()

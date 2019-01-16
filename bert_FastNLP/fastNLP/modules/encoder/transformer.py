@@ -8,10 +8,9 @@ from ..other_modules import LayerNormalization
 
 class TransformerEncoder(nn.Module):
     class SubLayer(nn.Module):
-        def __init__(self, input_size, output_size, intermediate_size, key_size, value_size, num_atte, activate=torch.nn.ReLU, dropout=0.0):
+        def __init__(self, input_size, output_size, intermediate_size, key_size, num_atte, activate=torch.nn.ReLU, dropout=0.0):
             super(TransformerEncoder.SubLayer, self).__init__()
-            # TODO: change MultiHeadAtte
-            
+
             self.atte = MultiHeadAtte(input_size, output_size, key_size, num_atte, dropout)
             self.intermediate = nn.Sequential(
                 nn.Linear(output_size, intermediate_size),
