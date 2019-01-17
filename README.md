@@ -60,6 +60,7 @@ This version is based on [Pytorch-pretrained-BERT](https://github.com/huggingfac
    ```
 
 ### How to Get Pre-trained Parameters:
+Parameters from [Pytorch-pretrained-BERT](https://github.com/huggingface/pytorch-pretrained-BERT):
 
 | MODEL                          | LINK                                     |
 | ------------------------------ | ---------------------------------------- |
@@ -82,7 +83,7 @@ This version is based on [Pytorch-pretrained-BERT](https://github.com/huggingfac
 
 4. Use this command 
 
-   ```python
+   ```shell
    export GLUE_DIR=../bert_pytorch/tasks/SequenceClassification/glue_data
    python run_classifier_fastNLP.py \
      --task_name MRPC \
@@ -268,11 +269,12 @@ Though we remain the orignal training code for these two tasks, we replace the o
 
    2.  In `fastNLP.module.encoder.transformer`, we implemented our `TransformerEncoder` based on `SubLayer` with `MultiHeadAtte`. We can pay attention to that:
 
-      ```python
-      def __init__(self, num_layers, **kargs):
-          super(TransformerEncoder, self).__init__()
-          self.layers = nn.ModuleList([self.SubLayer(**kargs) for _ in range(num_layers)])
-      ```
+         ```python
+         class TransformerEncoder(nn.Module):
+            def __init__(self, num_layers, **kargs):
+                super(TransformerEncoder, self).__init__()
+                self.layers = nn.ModuleList([self.SubLayer(**kargs) for _ in range(num_layers)])
+         ```
 
       For `self.layers`, we used `nn.ModuleList` instead of `nn.Sequential` considering that in some task, outputs of all layers are valuable. Because of this, we set flag `all_output=True`.
 
